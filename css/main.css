@@ -1,44 +1,208 @@
+ :root {
+     --green: #5CA5A5;
+     --light-green: rgba(92, 165, 165, 0.1);
+     --text-color: #7C8F8F;
+     --black: #2B3939;
+ }
+
  /* GLOBAL STYLES */
-html{
-    box-sizing: border-box;
-    height:100%;
-    scroll-behavior: smooth;
-}
+ html {
+     box-sizing: border-box;
+     height: 100%;
+     scroll-behavior: smooth;
+ }
 
-*, *::before, *::after {
-    box-sizing:inherit;
-}
+ *,
+ *::before,
+ *::after {
+     box-sizing: inherit;
+ }
 
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-family:  Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #222;
-    background-color: #fff;
-}
+ body {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     font-family: 'Spartan', Arial, sans-serif;
+     font-weight: bold;
+     margin: 0;
+     padding: 0;
+     font-size: 15px;
+     line-height: 1.5;
+     color: var(--text-color);
+     background-color: #EFFAFA;
+ }
 
-img{
-    max-width: 100%;
-    height:auto;
-}
+ img {
+     max-width: 100%;
+     height: auto;
+ }
 
-/* CONTAINER */
-.container {
-    width: 100%;
-    max-width: 1240px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
+ a {
+     text-decoration: none;
+ }
 
-/* MAIN-CONTENT */
+ ul {
+     padding: 0;
+     margin: 0;
+     list-style: none;
+ }
 
-.main-content{
-    flex-grow: 1;
-}
+
+ /* CONTAINER */
+ .container {
+     width: 100%;
+     max-width: 1150px;
+     padding-left: 20px;
+     padding-right: 20px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+
+ /* HEADER */
+
+ .header {
+     width: 1366px;
+     min-height: 156px;
+     background-color: var(--green);
+     background-image: url(../img/header-bg.svg);
+ }
+
+
+ /* MAIN-CONTENT */
+
+ .main-content {
+     flex-grow: 1;
+     padding: 76px 0 120px 0;
+ }
+
+ .visually-hidden {
+     clip: rect(0 0 0 0);
+     clip-path: inset(50%);
+     height: 1px;
+     overflow: hidden;
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+ }
+
+ .jobs-list__item {
+     display: flex;
+     align-items: center;
+     padding: 32px 40px 32px 35px;
+     background-color: #fff;
+     box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+     border-radius: 5px;
+     border-left: 5px solid transparent;
+ }
+
+ .jobs-list__item.featured {
+     border-left: 5px solid var(--green);
+ }
+
+ .jobs-list__item:not(:last-child) {
+     margin-bottom: 24px;
+ }
+
+ .jobs-list__logo {
+     width: 88px;
+     height: 88px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-right: 24px;
+     flex-shrink: 0;
+ }
+
+ .jobs-list__info {
+     flex-grow: 1;
+     margin-right: 24px;
+ }
+
+ .company-badges {
+     display: flex;
+     align-items: center;
+     margin-bottom: 12px;
+ }
+
+ .company-name {
+     color: var(--green);
+     font-size: 14px;
+     line-height: 16px;
+     margin-right: 16px;
+     text-transform: capitalize;
+ }
+
+ .badges {
+     display: inline-flex;
+ }
+
+ .badges__item {
+     padding: 6px 8px 4px;
+     font-size: 11px;
+     line-height: 14px;
+     text-transform: uppercase;
+     text-align: center;
+     color: #FFFFFF;
+     border-radius: 12px;
+     margin-right: 8px;
+ }
+
+
+ .badge-green {
+     background-color: var(--green);
+ }
+
+ .badge-black {
+     background-color: var(--black);
+ }
+
+ .jobs-list__position {
+     margin-bottom: 8px;
+ }
+
+ .lobs-list__link {
+     font-size: 18px;
+     line-height: 24px;
+     color: var(--black);
+ }
+
+ .extra-info__item {
+     position: relative;
+     font-weight: 500;
+     color: var(--text-color);
+     margin-right: 36px;
+ }
+
+ .extra-info__item:not(:last-child):after {
+     content: '';
+     position: absolute;
+     width: 4px;
+     height: 4px;
+     border-radius: 50%;
+     background-color: var(--text-color);
+     /* left: 130%; */
+     right: -20px;
+     top: 50%;
+     transform: translateY(-50%);
+ }
+
+ .jobs-list_tags {
+     display: flex;
+     justify-content: flex-end;
+
+ }
+
+ .jobs-list__tags__item {
+     display: inline-block;
+     font-size: 13px;
+     line-height: 24px;
+     background-color: var(--light-green);
+     letter-spacing: -0.1px;
+     padding: 4px 8px;
+     color: #5CA5A5;
+     border-radius: 4px;
+ }
+
+ .jobs-list__tags__item:not(:last-child) {
+     margin-right: 16px;
+ }
